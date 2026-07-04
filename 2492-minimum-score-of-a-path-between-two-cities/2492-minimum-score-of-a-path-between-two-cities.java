@@ -1,30 +1,29 @@
-class Pair {
-    int v, d; 
-    Pair(int v, int d) {
-        this.v = v; this.d = d; 
-    }
-}
 class Solution {
     public int minScore(int n, int[][] roads) {
-        List<List<Pair>> adj = new ArrayList<>(); 
-        for(int i = 0; i <= n; i++) adj.add(new ArrayList<>()); 
-        for(int r[]: roads) {
-            adj.get(r[0]).add(new Pair(r[1], r[2])); adj.get(r[1]).add(new Pair(r[0], r[2])); 
+        
+        ArrayList<ArrayList<int[]>> adj = new ArrayList<>();
+        for(int i=0;i<=n;i++) adj.add(new ArrayList<>());
+        for(int[] edge : roads) {
+            int u=edge[0], v=edge[1], wt=edge[2];
+            adj.get(u).add(new int[]{v,wt}); adj.get(v).add(new int[]{u,wt});
         }
-        Queue<Integer> q = new ArrayDeque<>(); 
-        q.add(1); 
-        int mn = 1_000_01; 
-        boolean vis[] = new boolean[n + 1]; 
-        while(q.size() > 0) {
-            Integer front = q.remove(); 
-            vis[front] = true; 
-            for(Pair pr: adj.get(front)) {
-                int next=pr.v, d=pr.d; 
-                if(!vis[next]) {
-                    mn=Math.min(mn,d); q.add(next); 
+        boolean[] visited = new boolean[n+1];
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(1);
+        visited[1]=true;
+        int result = Integer.MAX_VALUE;
+        while(!queue.isEmpty()) {
+            int curr = queue.poll();
+            for(int[] edge :adj.get(curr)) {
+                int v = edge[0];
+                int wt = edge[1];
+                result = Math.min(result, wt);
+                if(!visited[v]) {
+                    visited[v]=true;
+                    queue.offer(v);
                 }
             }
         }
-        return mn; 
+        return result;
     }
 }
