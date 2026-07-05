@@ -1,34 +1,28 @@
-class Solution {
-    static final int MOD = 1000000007;
-    public int[] pathsWithMaxScore(List<String> board) {
+class Solution{
+    private final int MOD = 1000000007;
+    public int[] pathsWithMaxScore(List<String> board){
         int n = board.size();
-        int[][] score = new int[n][n], ways = new int[n][n];
-        for (int[] row : score) Arrays.fill(row, -1);
-        score[n - 1][n - 1] = 0;
-        ways[n - 1][n - 1] = 1;
-        for (int i = n - 1; i >= 0; i--) {
-            for (int j = n - 1; j >= 0; j--) {
-                if (board.get(i).charAt(j) == 'X') continue;
-                if (i == n - 1 && j == n - 1) continue;
-                int best = -1, count = 0;
-                int[][] dir = {{1, 0}, {0, 1}, {1, 1}};
-                for (int[] d : dir) {
-                    int x = i + d[0], y = j + d[1];
-                    if (x >= n || y >= n || score[x][y] == -1) continue;
-                    if (score[x][y] > best) {
-                        best = score[x][y];
-                        count = ways[x][y];
-                    }
-                    else if (score[x][y] == best) count = (count + ways[x][y]) % MOD;
+        int[][][] dp = new int[n][n][2];
+        for (int i = 0; i < n; i++) for (int j = 0; j < n; j++) dp[i][j][0] = -1;
+        dp[n - 1][n - 1][0] = 0;
+        dp[n - 1][n - 1][1] = 1;
+        for (int i = n - 1; i >= 0; i--){
+            for (int j = n - 1; j >= 0; j--){
+                if (!(i == n - 1 && j == n - 1) && board.get(i).charAt(j) != 'X'){
+                    update(dp, i, j, i + 1, j, n);
+                    update(dp, i, j, i, j + 1, n);
+                    update(dp, i, j, i + 1, j + 1, n);
+                    if (dp[i][j][0] != -1) dp[i][j][0] += board.get(i).charAt(j) == 'E' ? 0 : board.get(i).charAt(j) - '0';
                 }
-                if (best == -1) continue;
-                score[i][j] = best;
-                char c = board.get(i).charAt(j);
-                if (Character.isDigit(c)) score[i][j] += c - '0';
-                ways[i][j] = count;
             }
         }
-        if (ways[0][0] == 0) return new int[]{0, 0};
-        return new int[]{score[0][0], ways[0][0]};
+        if (dp[0][0][0] != -1) return new int[] { dp[0][0][0], dp[0][0][1] % MOD };
+        return new int[] { 0, 0 };
+    }
+    private void update(int[][][] dp, int x, int y, int u, int v, int n){
+        if (u >= n || v >= n || dp[u][v][0] == -1) return;
+        if (dp[u][v][0] > dp[x][y][0]){
+            dp[x][y][0] = dp[u][v][0]; dp[x][y][1] = dp[u][v][1];
+        }else if (dp[u][v][0] == dp[x][y][0]) dp[x][y][1] = (dp[x][y][1] + dp[u][v][1]) % MOD;
     }
 }
