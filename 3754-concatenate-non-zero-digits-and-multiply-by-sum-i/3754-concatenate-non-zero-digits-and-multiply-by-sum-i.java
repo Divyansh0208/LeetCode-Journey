@@ -1,7 +1,7 @@
 class Solution {
     public long sumAndMultiply(int n) {
-        if(n<=0) return 0;
         int a=0;
+        if(n<=0) return 0;
         StringBuilder s=new StringBuilder();
         while(n>0){
             int x=n%10;
@@ -9,8 +9,7 @@ class Solution {
                 n/=10; continue;
             }
             s.append(x);
-            a+=x;
-            n/=10;
+            a+=x; n/=10;
         }
         return Long.parseLong(s.reverse().toString())*a;
     }
