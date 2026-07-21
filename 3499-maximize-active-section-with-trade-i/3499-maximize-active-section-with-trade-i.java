@@ -1,19 +1,18 @@
-class Solution {
-    public int maxActiveSectionsAfterTrade(String s) {
-        int a = 0, b = 0;
-        for (char c : s.toCharArray()) if (c == '1') a++;
-        String t = "1" + s + "1";
-        ArrayList<Character> x = new ArrayList<>();
-        ArrayList<Integer> len = new ArrayList<>();
-        for (char c : t.toCharArray()) {
-            if (x.isEmpty() || x.get(x.size() - 1) != c) {
-                x.add(c);
-                len.add(1);
-            }else len.set(len.size() - 1, len.get(len.size() - 1) + 1);
+public class Solution {
+    public int maxActiveSectionsAfterTrade(String input) {
+        int a=0, b=0, c=0;
+        for(int i=0; i<input.length(); ++i){
+            int d=0, e=0;
+            while(i<input.length() && input.charAt(i)=='1'){
+                ++i; ++a; ++d;
+            }
+            while(i<input.length() && input.charAt(i)=='0'){
+                ++i; ++e;
+            }
+            if(b>0 && d>0 && e>0) c=Math.max(c, b+e);
+            --i;
+            b=e;
         }
-        for (int i = 1; i + 1 < x.size(); i++) {
-            if(x.get(i)=='1' && x.get(i-1)=='0' && x.get(i+1)=='0') b=Math.max(b, len.get(i-1)+len.get(i + 1));
-        }
-        return a+b;
+        return a+c;
     }
 }
