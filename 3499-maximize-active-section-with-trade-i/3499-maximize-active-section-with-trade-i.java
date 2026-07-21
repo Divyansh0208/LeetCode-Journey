@@ -1,18 +1,15 @@
-public class Solution {
-    public int maxActiveSectionsAfterTrade(String input) {
-        int a=0, b=0, c=0;
-        for(int i=0; i<input.length(); ++i){
-            int d=0, e=0;
-            while(i<input.length() && input.charAt(i)=='1'){
-                ++i; ++a; ++d;
+class Solution {
+    public int maxActiveSectionsAfterTrade(String s) {
+        int a=0, b=0, c=0, d=0;
+        for(char ch : s.toCharArray()){
+            if(ch=='0') c++;
+            else{
+                if(c!=0) d=c;
+                c=0; a++;
             }
-            while(i<input.length() && input.charAt(i)=='0'){
-                ++i; ++e;
-            }
-            if(b>0 && d>0 && e>0) c=Math.max(c, b+e);
-            --i;
-            b=e;
+            b=Math.max(b, c+d);
         }
-        return a+c;
+        if(b==c || b==d) return a;
+        return a+b;
     }
 }
