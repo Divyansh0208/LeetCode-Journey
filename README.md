@@ -199,4 +199,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1081-smallest-subsequence-of-distinct-characters](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1081-smallest-subsequence-of-distinct-characters) |
+## Database
+|  |
+| ------- |
+| [0175-combine-two-tables](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0175-combine-two-tables) |
 <!---LeetCode Topics End-->
