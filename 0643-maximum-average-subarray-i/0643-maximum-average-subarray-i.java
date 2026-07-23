@@ -7,6 +7,6 @@ class Solution {
             a=a-nums[i-k]+nums[i];
             b=Math.max(b, a);
         }
-        return b/k;
+        return (double) b/k;
     }
 }
