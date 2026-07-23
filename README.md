@@ -10,6 +10,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0506-relative-ranks](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0506-relative-ranks) |
 | [0628-maximum-product-of-three-numbers](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0628-maximum-product-of-three-numbers) |
 | [0643-maximum-average-subarray-i](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0643-maximum-average-subarray-i) |
+| [0645-set-mismatch](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0645-set-mismatch) |
 | [0682-baseball-game](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0682-baseball-game) |
 | [1260-shift-2d-grid](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1260-shift-2d-grid) |
 | [1288-remove-covered-intervals](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1288-remove-covered-intervals) |
@@ -34,6 +35,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0500-keyboard-row](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0500-keyboard-row) |
+| [0645-set-mismatch](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0645-set-mismatch) |
 | [1331-rank-transform-of-an-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1331-rank-transform-of-an-array) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1358-number-of-substrings-containing-all-three-characters) |
 | [3020-find-the-maximum-number-of-elements-in-subset](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3020-find-the-maximum-number-of-elements-in-subset) |
@@ -76,6 +78,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0506-relative-ranks](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0506-relative-ranks) |
 | [0628-maximum-product-of-three-numbers](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0628-maximum-product-of-three-numbers) |
+| [0645-set-mismatch](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0645-set-mismatch) |
 | [1288-remove-covered-intervals](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1288-remove-covered-intervals) |
 | [1331-rank-transform-of-an-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1331-rank-transform-of-an-array) |
 | [1846-maximum-element-after-decreasing-and-rearranging](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1846-maximum-element-after-decreasing-and-rearranging) |
@@ -183,6 +186,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Bit Manipulation
 |  |
 | ------- |
+| [0645-set-mismatch](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0645-set-mismatch) |
 | [3513-number-of-unique-xor-triplets-i](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3513-number-of-unique-xor-triplets-i) |
 | [3534-path-existence-queries-in-a-graph-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3534-path-existence-queries-in-a-graph-ii) |
 ## Number Theory
