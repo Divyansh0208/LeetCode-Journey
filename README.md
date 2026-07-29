@@ -98,6 +98,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## String
 |  |
 | ------- |
+| [0125-valid-palindrome](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0125-valid-palindrome) |
 | [0500-keyboard-row](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0500-keyboard-row) |
 | [1081-smallest-subsequence-of-distinct-characters](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1081-smallest-subsequence-of-distinct-characters) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1358-number-of-substrings-containing-all-three-characters) |
@@ -200,6 +201,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Two Pointers
 |  |
 | ------- |
+| [0125-valid-palindrome](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0125-valid-palindrome) |
 | [3534-path-existence-queries-in-a-graph-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3534-path-existence-queries-in-a-graph-ii) |
 | [3867-sum-of-gcd-of-formed-pairs](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3867-sum-of-gcd-of-formed-pairs) |
 ## Bit Manipulation
