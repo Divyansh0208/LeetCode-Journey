@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0500-keyboard-row](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0500-keyboard-row) |
 | [0506-relative-ranks](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0506-relative-ranks) |
 | [0628-maximum-product-of-three-numbers](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0628-maximum-product-of-three-numbers) |
@@ -165,6 +166,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Dynamic Programming
 |  |
 | ------- |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0509-fibonacci-number](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0509-fibonacci-number) |
 | [1301-number-of-paths-with-max-score](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1301-number-of-paths-with-max-score) |
 | [3336-find-the-number-of-subsequences-with-equal-gcd](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3336-find-the-number-of-subsequences-with-equal-gcd) |
