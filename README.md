@@ -20,6 +20,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1288-remove-covered-intervals](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1288-remove-covered-intervals) |
 | [1301-number-of-paths-with-max-score](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1301-number-of-paths-with-max-score) |
 | [1331-rank-transform-of-an-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1331-rank-transform-of-an-array) |
+| [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
 | [1846-maximum-element-after-decreasing-and-rearranging](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1846-maximum-element-after-decreasing-and-rearranging) |
 | [1967-number-of-strings-that-appear-as-substrings-in-word](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1967-number-of-strings-that-appear-as-substrings-in-word) |
@@ -44,6 +45,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0645-set-mismatch](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0645-set-mismatch) |
 | [1331-rank-transform-of-an-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1331-rank-transform-of-an-array) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1358-number-of-substrings-containing-all-three-characters) |
+| [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 | [3020-find-the-maximum-number-of-elements-in-subset](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3020-find-the-maximum-number-of-elements-in-subset) |
 | [3312-sorted-gcd-pair-queries](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3312-sorted-gcd-pair-queries) |
 | [3518-smallest-palindromic-rearrangement-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3518-smallest-palindromic-rearrangement-ii) |
@@ -90,6 +92,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0645-set-mismatch](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0645-set-mismatch) |
 | [1288-remove-covered-intervals](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1288-remove-covered-intervals) |
 | [1331-rank-transform-of-an-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1331-rank-transform-of-an-array) |
+| [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
 | [1846-maximum-element-after-decreasing-and-rearranging](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1846-maximum-element-after-decreasing-and-rearranging) |
 | [3517-smallest-palindromic-rearrangement-i](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3517-smallest-palindromic-rearrangement-i) |
@@ -254,6 +257,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Counting Sort
 |  |
 | ------- |
+| [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 | [3517-smallest-palindromic-rearrangement-i](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3517-smallest-palindromic-rearrangement-i) |
 ## Recursion
 |  |
