@@ -1,17 +1,15 @@
 class Solution {
-    public String stoneGameIII(int[] sv) {
-        int [] arr= new int[sv.length+1];
-        arr[sv.length]=0;
-        for(int i=sv.length-1;i>=0;i--){
-            arr[i]=Integer.MIN_VALUE;
-            int s=0;
-            for(int j=0;j<3 && i+j<sv.length;j++){
-                s+=sv[i+j];
-                arr[i]=Math.max(arr[i], s-arr[i+j+1]);
-            }
+    public String stoneGameIII(int[] stoneValue) {
+        int sufSum = 0, f1 = 0, f2 = 0, f3 = 0;
+        for (int i = stoneValue.length - 1; i >= 0; i--) {
+            sufSum += stoneValue[i];
+            int newF = sufSum - Math.min(Math.min(f1, f2), f3);
+            f3 = f2; f2 = f1;
+            f1 = newF;
         }
-        if(arr[0]>0) return "Alice";
-        else if(arr[0]<0) return "Bob";
-        else return "Tie";
+
+        int diff=f1-(sufSum-f1);
+        if (diff == 0) return "Tie";
+        return diff > 0 ? "Alice" : "Bob";
     }
 }
