@@ -16,13 +16,12 @@ class Solution {
             }
         }
         List<Integer> a=new ArrayList<>();
-        for(int i=0;i<n;i++){
-            if(!sus[i]) a.add(i);
-        }
+        for(int i=0;i<n;i++) if(!sus[i]) a.add(i);
         return a;
     }
     private void dfs(int node, List<Integer>[] arr, boolean[] sus){
         if(sus[node]) return;
+        
         sus[node]=true;
 
         for(int f:arr[node]) dfs(f,arr,sus);
