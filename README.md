@@ -209,6 +209,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0007-reverse-integer](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0007-reverse-integer) |
+| [0029-divide-two-integers](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0029-divide-two-integers) |
 | [0486-predict-the-winner](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0486-predict-the-winner) |
 | [0509-fibonacci-number](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0509-fibonacci-number) |
 | [0628-maximum-product-of-three-numbers](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0628-maximum-product-of-three-numbers) |
@@ -235,6 +236,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Bit Manipulation
 |  |
 | ------- |
+| [0029-divide-two-integers](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0029-divide-two-integers) |
 | [0645-set-mismatch](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0645-set-mismatch) |
 | [3513-number-of-unique-xor-triplets-i](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3513-number-of-unique-xor-triplets-i) |
 | [3514-number-of-unique-xor-triplets-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3514-number-of-unique-xor-triplets-ii) |
