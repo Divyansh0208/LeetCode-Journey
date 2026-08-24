@@ -142,6 +142,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0500-keyboard-row](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0500-keyboard-row) |
 | [1081-smallest-subsequence-of-distinct-characters](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1081-smallest-subsequence-of-distinct-characters) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1358-number-of-substrings-containing-all-three-characters) |
+| [1768-merge-strings-alternately](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1768-merge-strings-alternately) |
 | [1927-sum-game](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1927-sum-game) |
 | [1967-number-of-strings-that-appear-as-substrings-in-word](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1967-number-of-strings-that-appear-as-substrings-in-word) |
 | [2213-longest-substring-of-one-repeating-character](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/2213-longest-substring-of-one-repeating-character) |
@@ -277,6 +278,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0011-container-with-most-water](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0011-container-with-most-water) |
 | [0125-valid-palindrome](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0125-valid-palindrome) |
+| [1768-merge-strings-alternately](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1768-merge-strings-alternately) |
 | [3302-find-the-lexicographically-smallest-valid-sequence](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3302-find-the-lexicographically-smallest-valid-sequence) |
 | [3534-path-existence-queries-in-a-graph-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3534-path-existence-queries-in-a-graph-ii) |
 | [3867-sum-of-gcd-of-formed-pairs](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3867-sum-of-gcd-of-formed-pairs) |
