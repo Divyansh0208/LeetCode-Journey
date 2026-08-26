@@ -8,6 +8,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0011-container-with-most-water](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0011-container-with-most-water) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0121-best-time-to-buy-and-sell-stock) |
+| [0189-rotate-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0189-rotate-array) |
 | [0486-predict-the-winner](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0486-predict-the-winner) |
 | [0500-keyboard-row](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0500-keyboard-row) |
 | [0506-relative-ranks](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0506-relative-ranks) |
@@ -254,6 +255,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0007-reverse-integer](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0007-reverse-integer) |
 | [0029-divide-two-integers](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0029-divide-two-integers) |
+| [0189-rotate-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0189-rotate-array) |
 | [0486-predict-the-winner](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0486-predict-the-winner) |
 | [0509-fibonacci-number](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0509-fibonacci-number) |
 | [0628-maximum-product-of-three-numbers](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0628-maximum-product-of-three-numbers) |
@@ -285,6 +287,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0011-container-with-most-water](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0011-container-with-most-water) |
 | [0125-valid-palindrome](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0125-valid-palindrome) |
+| [0189-rotate-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0189-rotate-array) |
 | [0345-reverse-vowels-of-a-string](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0345-reverse-vowels-of-a-string) |
 | [1768-merge-strings-alternately](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1768-merge-strings-alternately) |
 | [3302-find-the-lexicographically-smallest-valid-sequence](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3302-find-the-lexicographically-smallest-valid-sequence) |
