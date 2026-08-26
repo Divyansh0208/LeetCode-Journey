@@ -1,0 +1,32 @@
+class Solution {
+    public String shortestBeautifulSubstring(String s, int k) {
+        if(s.length()<k) return "";
+        int l = 0, cnt = 0, mini = Integer.MAX_VALUE, start = -1;
+        for(int r=0;r<s.length();r++){
+            char c = s.charAt(r);
+            if(c=='1') cnt++;
+            while(cnt==k){
+                if((r-l+1)==mini){
+                    if(check(s, start, l, mini)) start = l;
+                }else if((r-l+1)<mini){
+                    mini = r-l+1;
+                    start = l;
+                }
+                if(s.charAt(l)=='1') cnt--;
+                l++;
+            }
+        }
+        return start==-1 ? "" : s.substring(start, start+mini);
+    }
+
+    private boolean check(String s, int start, int l, int mini){
+        int n = start+mini, m = l+mini;
+        while(start<n && l<m){
+            if(s.charAt(start) > s.charAt(l)) return true;
+            if(s.charAt(start) < s.charAt(l)) return false;
+            start++;
+            l++;
+        }
+        return false;
+    }
+}
