@@ -1,19 +1,10 @@
 class Solution {
-    public boolean uniformArray(int[] num) {
-        int min = Integer.MAX_VALUE;
-        int minOdd = Integer.MAX_VALUE;
-        for (int x : num) {
-            if (x < min) min = x;
-            if (x % 2 != 0 && x < minOdd) minOdd = x;
-        }
-        if (min % 2 == 0) {
-            for (int x : num) {
-                if (x % 2 != 0 && minOdd >= x) return false;
-            }
-        } else {
-            for (int x : num) {
-                if (x % 2 == 0 && minOdd >= x) return false;
-            }
+    public boolean uniformArray(int[] nums1) {
+        int min=Integer.MAX_VALUE;
+        for(int num:nums1) min=Math.min(min,num);
+        if(min%2==1) return true;
+        for(int num:nums1){
+            if(num%2==1) return false;
         }
         return true;
     }
