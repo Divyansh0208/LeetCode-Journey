@@ -1,12 +1,12 @@
 class Solution {
     public int numDistinct(String s, String t) {
-        int[] arr = new int[t.length() + 1];
-        arr[0] = 1;
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = t.length(); j >= 1; j--) {
-                if (s.charAt(i) == t.charAt(j - 1)) arr[j] += arr[j - 1];
+        int[] curr=new int[t.length()+1];curr[t.length()]=1;
+        for(int i=s.length()-1;i>=0;i--){
+            for(int j=0;j<t.length();j++){
+                if(s.charAt(i)==t.charAt(j)) curr[j]=curr[j+1]+curr[j];
+                else curr[j]=curr[j];
             }
         }
-        return arr[t.length()];
+        return curr[0];
     }
 }
