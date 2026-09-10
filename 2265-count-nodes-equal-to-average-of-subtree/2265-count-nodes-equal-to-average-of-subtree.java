@@ -6,8 +6,7 @@ class Solution {
     }
     private int[] solve(TreeNode root){
         if(root==null) return new int[]{0,0};
-        int sum=0;
-        int count =0;
+        int sum=0, count =0;
         int[] left = solve(root.left);
         int[] right =solve(root.right);
         sum+=left[0]+right[0]+root.val;
