@@ -20,6 +20,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0682-baseball-game](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0682-baseball-game) |
 | [0717-1-bit-and-2-bit-characters](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0717-1-bit-and-2-bit-characters) |
 | [0724-find-pivot-index](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0724-find-pivot-index) |
+| [0835-image-overlap](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0835-image-overlap) |
 | [0877-stone-game](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0877-stone-game) |
 | [1140-stone-game-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1140-stone-game-ii) |
 | [1260-shift-2d-grid](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1260-shift-2d-grid) |
@@ -233,6 +234,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Matrix
 |  |
 | ------- |
+| [0835-image-overlap](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0835-image-overlap) |
 | [1260-shift-2d-grid](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1260-shift-2d-grid) |
 | [1301-number-of-paths-with-max-score](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1301-number-of-paths-with-max-score) |
 | [2812-find-the-safest-path-in-a-grid](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/2812-find-the-safest-path-in-a-grid) |
