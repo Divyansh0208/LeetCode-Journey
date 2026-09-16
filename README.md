@@ -10,6 +10,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0189-rotate-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0189-rotate-array) |
 | [0219-contains-duplicate-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0219-contains-duplicate-ii) |
+| [0448-find-all-numbers-disappeared-in-an-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0486-predict-the-winner](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0486-predict-the-winner) |
 | [0500-keyboard-row](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0500-keyboard-row) |
 | [0506-relative-ranks](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0506-relative-ranks) |
@@ -70,6 +71,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0219-contains-duplicate-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0219-contains-duplicate-ii) |
+| [0448-find-all-numbers-disappeared-in-an-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0500-keyboard-row](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0500-keyboard-row) |
 | [0645-set-mismatch](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0645-set-mismatch) |
 | [1331-rank-transform-of-an-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1331-rank-transform-of-an-array) |
