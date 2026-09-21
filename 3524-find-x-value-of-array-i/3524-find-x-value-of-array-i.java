@@ -1,15 +1,15 @@
 class Solution {
     public long[] resultArray(int[] nums, int k) {
-        long[] a = new long[k], b = new long[k];
-        for(int i:nums){
-            int mod=i%k;
-            long[] tmp=new long[k];
+        long[] a = new long[k], cnt = new long[k];
+        for(int x: nums){
+            int mod = x%k;
+            long[] tmp = new long[k];
             for(int j=0;j<k;j++){
-                int n=(j*mod)%k;
-                tmp[n]+=b[j];
-                a[n]+=b[j];
+                int newMod = (j*mod)%k;
+                tmp[newMod] += cnt[j];
+                a[newMod] += cnt[j];
             }
-            a[mod]++; tmp[mod]++; b=tmp;
+            a[mod]++; tmp[mod]++; cnt = tmp;
         }
         return a;
     }
