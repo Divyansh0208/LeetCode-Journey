@@ -1,7 +1,6 @@
 class Solution {
     public long[] resultArray(int[] nums, int k) {
-        long[] a = new long[k];
-        long[] cnt = new long[k];
+        long[] a = new long[k], cnt = new long[k];
         for(int x: nums){
             int mod = x%k;
             long[] tmp = new long[k];
