@@ -7,7 +7,7 @@ class Solution {
             long[] d = new long[k];
             d[c]++; a[c]++;
             for (int j = 0; j < k; j++) {
-                int n=(int) (((long) j*c)%k);
+                int n=(j*c)%k;
                 d[n]+=b[j];
                 a[n]+=b[j];
             }
