@@ -7,8 +7,7 @@ class Solution {
             return;
         }
         int x=s.lastIndexOf('{',r);
-        String l=s.substring(0,x);
-        String z=s.substring(r+1);
+        String l=s.substring(0,x),z=s.substring(r+1);
         String i=s.substring(x+1,r);
         for(String j:i.split(",")) dfs(l+j+z);
     }
