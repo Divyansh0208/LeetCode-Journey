@@ -23,6 +23,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0724-find-pivot-index](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0724-find-pivot-index) |
 | [0835-image-overlap](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0835-image-overlap) |
 | [0877-stone-game](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0877-stone-game) |
+| [1011-capacity-to-ship-packages-within-d-days](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1011-capacity-to-ship-packages-within-d-days) |
 | [1140-stone-game-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1140-stone-game-ii) |
 | [1260-shift-2d-grid](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1260-shift-2d-grid) |
 | [1288-remove-covered-intervals](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1288-remove-covered-intervals) |
@@ -225,6 +226,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Binary Search
 |  |
 | ------- |
+| [1011-capacity-to-ship-packages-within-d-days](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1011-capacity-to-ship-packages-within-d-days) |
 | [1477-find-two-non-overlapping-sub-arrays-each-with-target-sum](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1477-find-two-non-overlapping-sub-arrays-each-with-target-sum) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
 | [2812-find-the-safest-path-in-a-grid](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/2812-find-the-safest-path-in-a-grid) |
