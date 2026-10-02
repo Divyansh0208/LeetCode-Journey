@@ -1,15 +1,15 @@
 class Solution {
     public List<String> generateParenthesis(int n) {
-        List<String> result = new ArrayList<>();
-        backtrack(result, "", 0, 0, n);
-        return result;
+        List<String> r = new ArrayList<>();
+        b(r, "", 0, 0, n);
+        return r;
     }
-    private void backtrack(List<String> result, String current, int openCount, int closeCount, int n) {
-        if (openCount == n && closeCount == n) {
-            result.add(current);
+    private void b(List<String> r, String cu, int o, int c, int n) {
+        if (o == n && c == n) {
+            r.add(cu);
             return;
         }
-        if (openCount < n) backtrack(result, current + "(", openCount + 1, closeCount, n);
-        if (closeCount < openCount) backtrack(result, current + ")", openCount, closeCount + 1, n);
+        if (o < n) b(r, cu + "(", o + 1, c, n);
+        if (c < o) b(r, cu + ")", o, c + 1, n);
     }
 }
