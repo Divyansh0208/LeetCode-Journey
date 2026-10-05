@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0011-container-with-most-water](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0011-container-with-most-water) |
+| [0053-maximum-subarray](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0053-maximum-subarray) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0189-rotate-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0189-rotate-array) |
 | [0219-contains-duplicate-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0219-contains-duplicate-ii) |
@@ -109,6 +110,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Divide and Conquer
 |  |
 | ------- |
+| [0053-maximum-subarray](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0053-maximum-subarray) |
 | [3739-count-subarrays-with-majority-element-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3739-count-subarrays-with-majority-element-ii) |
 ## Segment Tree
 |  |
@@ -305,6 +307,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0022-generate-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0022-generate-parentheses) |
 | [0032-longest-valid-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0032-longest-valid-parentheses) |
+| [0053-maximum-subarray](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0053-maximum-subarray) |
 | [0115-distinct-subsequences](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0115-distinct-subsequences) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0486-predict-the-winner](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0486-predict-the-winner) |
