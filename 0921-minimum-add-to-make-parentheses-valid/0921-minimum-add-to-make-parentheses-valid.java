@@ -1,9 +1,12 @@
 class Solution {
     public int minAddToMakeValid(String s) {
-        while (true) {
-            int a = s.indexOf("()");
-            if (a == -1) return s.length();
-            s = s.substring(0, a) + s.substring(a + 2);
+        int a = 0, b = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '(') a++;
+            else if (a > 0) a--;
+            else b++;
         }
+        return b + a;
     }
 }
