@@ -14,8 +14,8 @@ class Solution {
             }
             return;
         }
-        String reversed = new StringBuilder(s).reverse().toString();
-        if (par[0] == '(') remove(reversed, an, 0, 0, new char[] { ')', '(' });
-        else an.add(reversed);
+        String rev = new StringBuilder(s).reverse().toString();
+        if (par[0] == '(') remove(rev, an, 0, 0, new char[] { ')', '(' });
+        else an.add(rev);
     }
 }
