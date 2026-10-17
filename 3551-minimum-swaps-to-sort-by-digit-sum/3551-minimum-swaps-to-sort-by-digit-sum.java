@@ -1,39 +1,36 @@
 class Solution {
     public int minSwaps(int[] nums) {
         int n = nums.length;
-        int[][] arr = new int[n][2];
-        for(int i = 0; i < n; i++){
-            arr[i][0] = nums[i];
-            arr[i][1] = i;
-        }
-        Arrays.sort(arr, (x, y) -> {
-            int a = digSum(x[0]), b = digSum(y[0]);
-            if(a != b) return a - b;
-            return x[0] - y[0];
-        });
-        int[] pos = new int[n];
-        for(int i = 0; i < n; i++) pos[arr[i][1]] = i;
-        boolean[] fix = new boolean[n];
-        int swaps = 0;
-        for(int i = 0; i < n; i++){
-            if(fix[i]) continue;
-            int j = i, count = 0;
-            while(!fix[j]){
-                fix[j] = true;
-                j = pos[j];
-                count++;
+        int[] digitSum = new int[n];
+        for (int i = 0; i < n; i++) {
+            int x = nums[i],
+                sum = 0;
+            while (x > 0) {
+                sum += x % 10;
+                x /= 10;
             }
-            if(count > 1) swaps += count - 1;
+            digitSum[i] = sum;
         }
-        return swaps;
-    }
-
-    private int digSum(int num){
-        int sum = 0;
-        while(num > 0){
-            sum += num % 10;
-            num /= 10;
+        Integer[] indices = new Integer[n];
+        for (int i = 0; i < n; i++) indices[i] = i;
+        Arrays.sort(indices, (a, b) -> {
+            if (digitSum[a] != digitSum[b]) return Integer.compare(digitSum[a], digitSum[b]);
+            return Integer.compare(nums[a], nums[b]);
+        });
+        int[] targetPos = new int[n];
+        for (int pos = 0; pos < n; pos++) targetPos[indices[pos]] = pos;
+        boolean[] visited = new boolean[n];
+        int cycles = 0;
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                cycles++;
+                int j = i;
+                while (!visited[j]) {
+                    visited[j] = true;
+                    j = targetPos[j];
+                }
+            }
         }
-        return sum;
+        return n - cycles;
     }
 }
