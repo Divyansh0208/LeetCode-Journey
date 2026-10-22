@@ -1,15 +1,28 @@
-class Solution { 
-    public int minOperations(int[] nums) { 
-        int shift = 0; 
-        while (nums[shift] != 0) shift++; 
-        boolean b = true, c = true; 
-        for (int k = 0; k < nums.length && (b || c); k++) { 
-            int r = nums[(shift + k) % nums.length];
-            b &= r == k;
-            c &= r == (nums.length - k) % nums.length;
+class Solution {
+    public int minOperations(int[] nums) {
+        if(nums.length==1) return 0;
+        int a=-1;
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]!=nums[i-1]+1){
+                if(a!=-1){
+                    a=nums.length+1; break;
+                }
+                a=i;
+            }
         }
-        if (b) return Math.min(shift, nums.length - shift + 2);
-        if (c) return Math.min(shift + 2, nums.length - shift);
-        return -1; 
-    } 
+        if(a==-1) return 0;
+        if(a<nums.length) return Math.min(a,2+(nums.length-a));
+        int b=-1;
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]!=nums[i-1]-1){
+                if(b!=-1){
+                    b=nums.length+1; break;
+                }
+                b=i;
+            }
+        }
+        if(b==-1) return 1;
+        if(b<nums.length) return Math.min(b,nums.length-b)+1;
+        return -1;
+    }
 }
