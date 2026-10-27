@@ -1,8 +1,11 @@
 class Solution {
     public String[] createGrid(int m, int n) {
-        String[] g = new String[m];
-        Arrays.fill(g, "#".repeat(n - 1) + ".");
-        g[0] = ".".repeat(n);
-        return g;
+        char[][] g = new char[m][n];
+        for (int i = 0; i < m; i++) Arrays.fill(g[i], '#');
+        Arrays.fill(g[0], '.');
+        for (int i = 0; i < m; i++) g[i][n - 1] = '.';
+        String[] a = new String[m];
+        for (int i = 0; i < m; i++) a[i] = new String(g[i]);
+        return a;
     }
 }
