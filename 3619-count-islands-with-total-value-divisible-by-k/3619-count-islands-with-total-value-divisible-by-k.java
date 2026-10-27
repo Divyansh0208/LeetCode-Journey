@@ -1,28 +1,24 @@
 class Solution {
-    int m, n;
+    int ans=0;
     public int countIslands(int[][] grid, int k) {
-        m = grid.length; n = grid[0].length;
-        Queue<int[]> queue = new ArrayDeque<>();
-        int[][] dirs = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
-        int count = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (grid[i][j] != 0) {
-                    long sum = dfs(grid, i, j);
-                    if (sum % k == 0) count++;
+        for(int i=0;i<grid.length;i++){
+            for(int j=0;j<grid[0].length;j++){
+                if(grid[i][j]>0){
+                    long val = solve(grid,i,j);
+                    if(val%k==0)ans++;
                 }
             }
         }
-        return count;
+        return ans;
     }
-    private long dfs(int[][] grid, int row, int col) {
-        if (row < 0 || row >= m || col < 0 || col >= n || grid[row][col] == 0) return 0;
-        long sum = grid[row][col];
-        grid[row][col] = 0;
-        sum += dfs(grid, row + 1, col);
-        sum += dfs(grid, row - 1, col);
-        sum += dfs(grid, row, col + 1);
-        sum += dfs(grid, row, col - 1);
+    private long solve(int[][] grid, int i,int j){
+        if(i<0 || j<0 || i==grid.length || j==grid[0].length) return 0;
+        long sum=grid[i][j];
+        grid[i][j]=-1;
+        if(i>0 && grid[i-1][j]>0) sum+=solve(grid,i-1,j);
+        if(j>0 && grid[i][j-1]>0) sum+=solve(grid,i,j-1);
+        if(i<grid.length-1 && grid[i+1][j]>0) sum+=solve(grid,i+1,j);
+        if(j<grid[0].length-1 && grid[i][j+1]>0) sum+=solve(grid,i,j+1);
         return sum;
     }
 }
