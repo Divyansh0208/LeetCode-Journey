@@ -1,24 +1,27 @@
 class Solution {
-    int ans=0;
+    int[][] ggrid;
+    int m,n;
     public int countIslands(int[][] grid, int k) {
-        for(int i=0;i<grid.length;i++){
-            for(int j=0;j<grid[0].length;j++){
-                if(grid[i][j]>0){
-                    long val = solve(grid,i,j);
-                    if(val%k==0)ans++;
+        int maxArea=0;
+        this.ggrid=grid;
+        this.m=grid.length;
+        this.n=grid[0].length;
+        for(int i=0;i<m;i++){
+            for (int j=0;j<n;j++){
+                if (this.ggrid[i][j]!=0){
+                    if( countArea(i,j)%k==0) maxArea++;
                 }
             }
         }
-        return ans;
+        return maxArea;
     }
-    private long solve(int[][] grid, int i,int j){
-        if(i<0 || j<0 || i==grid.length || j==grid[0].length) return 0;
-        long s=grid[i][j];
-        grid[i][j]=-1;
-        if(i>0 && grid[i-1][j]>0) s+=solve(grid,i-1,j);
-        if(j>0 && grid[i][j-1]>0) s+=solve(grid,i,j-1);
-        if(i<grid.length-1 && grid[i+1][j]>0) s+=solve(grid,i+1,j);
-        if(j<grid[0].length-1 && grid[i][j+1]>0) s+=solve(grid,i,j+1);
-        return s;
+    long countArea(int i,int j){
+        long area=ggrid[i][j];
+        ggrid[i][j]=0;
+        if(i>0&&ggrid[i-1][j]!=0) area+=countArea(i-1,j);
+        if(j>0&&ggrid[i][j-1]!=0) area+=countArea(i,j-1);
+        if(i<m-1&&ggrid[i+1][j]!=0) area+=countArea(i+1,j);
+        if(j<n-1&&ggrid[i][j+1]!=0) area+=countArea(i,j+1);
+        return area;
     }
 }
