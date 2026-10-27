@@ -1,32 +1,28 @@
 class Solution {
+    int m, n;
     public int countIslands(int[][] grid, int k) {
-        int m = grid.length, n = grid[0].length;
+        m = grid.length; n = grid[0].length;
+        Queue<int[]> queue = new ArrayDeque<>();
+        int[][] dirs = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
         int count = 0;
-        int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (grid[i][j] > 0) {
-                    long sum = 0;
-                    Queue<int[]> queue = new LinkedList<>();
-                    queue.offer(new int[]{i, j});
-                    sum += grid[i][j];
-                    grid[i][j] = 0;
-                    while (!queue.isEmpty()) {
-                        int[] cell = queue.poll();
-                        int r = cell[0], c = cell[1];
-                        for (int[] d : dirs) {
-                            int nr = r + d[0], nc = c + d[1];
-                            if (nr >= 0 && nr < m && nc >= 0 && nc < n && grid[nr][nc] > 0) {
-                                sum += grid[nr][nc];
-                                queue.offer(new int[]{nr, nc});
-                                grid[nr][nc] = 0;
-                            }
-                        }
-                    }
+                if (grid[i][j] != 0) {
+                    long sum = dfs(grid, i, j);
                     if (sum % k == 0) count++;
                 }
             }
         }
         return count;
+    }
+    private long dfs(int[][] grid, int row, int col) {
+        if (row < 0 || row >= m || col < 0 || col >= n || grid[row][col] == 0) return 0;
+        long sum = grid[row][col];
+        grid[row][col] = 0;
+        sum += dfs(grid, row + 1, col);
+        sum += dfs(grid, row - 1, col);
+        sum += dfs(grid, row, col + 1);
+        sum += dfs(grid, row, col - 1);
+        return sum;
     }
 }
