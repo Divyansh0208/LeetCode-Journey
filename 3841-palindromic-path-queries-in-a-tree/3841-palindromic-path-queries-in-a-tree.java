@@ -1,95 +1,130 @@
-class Solution {
-    private static final int LOG = 17;
-    public List<Boolean> palindromePath(int n, int[][] edges, String s, String[] queries) {
-        List<Integer>[] graph = new ArrayList[n];
-        for (int i = 0; i < n; i++) graph[i] = new ArrayList<>();
-        for (int[] e : edges) {
-            graph[e[0]].add(e[1]);
-            graph[e[1]].add(e[0]);
-        }
-        int[][] parent = new int[LOG][n];
-        for (int[] row : parent) Arrays.fill(row, -1);
-        int[] depth = new int[n];
-        int[] tin = new int[n];
-        int[] tout = new int[n];
-        int[] timer = {0};
-        dfs(0, -1, graph, parent, depth, tin, tout, timer);
-        for (int k = 1; k < LOG; k++) {
-            for (int i = 0; i < n; i++) {
-                int p = parent[k - 1][i];
-                if (p != -1) parent[k][i] = parent[k - 1][p];
-            }
-        }
-        Fenwick fenwick = new Fenwick(n);
-        char[] labels = s.toCharArray();
-        for (int i = 0; i < n; i++) {
-            int m = mask(labels[i]);
-            fenwick.add(tin[i], m);
-            fenwick.add(tout[i] + 1, m);
-        }
-        List<Boolean> ans = new ArrayList<>();
-        for (String q : queries) {
-            String[] p = q.split(" ");
-            if (p[0].equals("update")) {
-                int u = Integer.parseInt(p[1]);
-                char c = p[2].charAt(0);
-                int delta = mask(labels[u]) ^ mask(c);
-                labels[u] = c;
-                fenwick.add(tin[u], delta);
-                fenwick.add(tout[u] + 1, delta);
-            } else {
-                int u = Integer.parseInt(p[1]), v = Integer.parseInt(p[2]), w = lca(u, v, parent, depth);
-                int m = fenwick.sum(tin[u]) ^ fenwick.sum(tin[v]) ^ mask(labels[w]);
-                ans.add(m == 0 || (m & (m - 1)) == 0);
-            }
-        }
-        return ans;
-    }
-    private void dfs(int u, int p, List<Integer>[] g, int[][] parent, int[] depth, int[] tin, int[] tout, int[] timer) {
+import java.util.*;
 
-        tin[u] = timer[0]++;
-        parent[0][u] = p;
-        for (int v : g[u]) {
-            if (v == p) continue;
-            depth[v] = depth[u] + 1;
-            dfs(v, u, g, parent, depth, tin, tout, timer);
+class Solution {
+    int[] head, to, next;
+    int edgeCount;
+    int[] parent, depth, size, heavy;
+    int[] chainHead, pos;
+    int currentPos;
+    int[] segTree;
+    public List<Boolean> palindromePath(int n, int[][] edges, String s, String[] queries) {
+        head = new int[n];
+        Arrays.fill(head, -1);
+        to = new int[2 * (n - 1)];
+        next = new int[2 * (n - 1)];
+        for (int[] e : edges) {
+            addEdge(e[0], e[1]);
+            addEdge(e[1], e[0]);
         }
-        tout[u] = timer[0] - 1;
-    }
-    private int lca(int u, int v, int[][] parent, int[] depth) {
-        if (depth[u] < depth[v]) {
-            int t = u; u = v; v = t;
-        }
-        int d = depth[u] - depth[v];
-        for (int k = 0; k < LOG; k++)
-            if ((d & (1 << k)) != 0) u = parent[k][u];
-        if (u == v) return u;
-        for (int k = LOG - 1; k >= 0; k--) {
-            if (parent[k][u] != parent[k][v]) {
-                u = parent[k][u];
-                v = parent[k][v];
+        parent = new int[n];
+        depth = new int[n];
+        size = new int[n];
+        heavy = new int[n];
+        Arrays.fill(parent, -1);
+        Arrays.fill(heavy, -1);
+        dfs(0, -1);
+        chainHead = new int[n];
+        pos = new int[n];
+        currentPos = 0;
+        decompose(0, 0);
+        int[] values = new int[n];
+        for (int i = 0; i < n; i++) values[pos[i]] = 1 << (s.charAt(i) - 'a');
+        segTree = new int[4 * n];
+        build(1, 0, n - 1, values);
+        char[] chars = s.toCharArray();
+        List<Boolean> answer = new ArrayList<>();
+        for (String query : queries) {
+            String[] parts = query.split(" ");
+            if (parts[0].equals("update")) {
+                int node = Integer.parseInt(parts[1]);
+                char newChar = parts[2].charAt(0);
+                chars[node] = newChar;
+                int mask = 1 << (newChar - 'a');
+                update(1, 0, n - 1, pos[node], mask);
+            } else {
+                int u = Integer.parseInt(parts[1]);
+                int v = Integer.parseInt(parts[2]);
+                int mask = queryPath(u, v);
+                boolean possible = mask == 0 || (mask & (mask - 1)) == 0;
+                answer.add(possible);
             }
         }
-        return parent[0][u];
+        return answer;
     }
-    private int mask(char c) { 
-        return 1 << (c - 'a');
+    void addEdge(int u, int v) {
+        to[edgeCount] = v;
+        next[edgeCount] = head[u];
+        head[u] = edgeCount++;
     }
-    static class Fenwick {
-        int n;
-        int[] bit;
-        Fenwick(int n) {
-            this.n = n;
-            bit = new int[n + 1];
+    void dfs(int node, int par) {
+        parent[node] = par;
+        size[node] = 1;
+        int maxSize = 0;
+        for (int e = head[node]; e != -1; e = next[e]) {
+            int child = to[e];
+            if (child == par) continue;
+            depth[child] = depth[node] + 1;
+            dfs(child, node);
+            size[node] += size[child];
+            if (size[child] > maxSize) {
+                maxSize = size[child];
+                heavy[node] = child;
+            }
         }
-        void add(int i, int val) {
-            for (i++; i <= n; i += i & -i) bit[i] ^= val;
+    }
+    void decompose(int node, int chain) {
+        chainHead[node] = chain;
+        pos[node] = currentPos++;
+        if (heavy[node] != -1) decompose(heavy[node], chain);
+        for (int e = head[node]; e != -1; e = next[e]) {
+            int child = to[e];
+            if (child == parent[node] || child == heavy[node]) continue;
+            decompose(child, child);
         }
-        int sum(int i) {
-            int r = 0;
-            for (i++; i > 0; i -= i & -i)
-                r ^= bit[i];
-            return r;
+    }
+    void build(int node, int left, int right, int[] arr) {
+        if (left == right) {
+            segTree[node] = arr[left];
+            return;
         }
+        int mid = (left + right) / 2;
+        build(node * 2, left, mid, arr);
+        build(node * 2 + 1, mid + 1, right, arr);
+        segTree[node] = segTree[node * 2] ^ segTree[node * 2 + 1];
+    }
+    void update(int node, int left, int right, int index, int value) {
+        if (left == right) {
+            segTree[node] = value;
+            return;
+        }
+        int mid = (left + right) / 2;
+        if (index <= mid) update(node * 2, left, mid, index, value);
+        else update(node * 2 + 1, mid + 1, right, index, value);
+        segTree[node] = segTree[node * 2] ^ segTree[node * 2 + 1];
+    }
+    int query(int node, int left, int right, int ql, int qr) {
+        if (qr < left || right < ql) return 0;
+        if (ql <= left && right <= qr) return segTree[node];
+        int mid = (left + right) / 2;
+        return query(node * 2, left, mid, ql, qr) ^ query(node * 2 + 1, mid + 1, right, ql, qr);
+    }
+    int queryPath(int u, int v) {
+        int result = 0;
+        while (chainHead[u] != chainHead[v]) {
+            if (depth[chainHead[u]] < depth[chainHead[v]]) {
+                int temp = u;
+                u = v;
+                v = temp;
+            }
+            result ^= query(1, 0, pos.length - 1, pos[chainHead[u]], pos[u]);
+            u = parent[chainHead[u]];
+        }
+        if (depth[u] > depth[v]) {
+            int temp = u;
+            u = v;
+            v = temp;
+        }
+        result ^= query( 1, 0, pos.length - 1, pos[u], pos[v]);
+        return result;
     }
 }
