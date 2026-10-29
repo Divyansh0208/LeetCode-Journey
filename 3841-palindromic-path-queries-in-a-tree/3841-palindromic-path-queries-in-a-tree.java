@@ -1,105 +1,95 @@
 class Solution {
+    private static final int LOG = 17;
     public List<Boolean> palindromePath(int n, int[][] edges, String s, String[] queries) {
-        List<List<Integer>> g = new ArrayList<>();
-        for (int i = 0; i < n; i++) g.add(new ArrayList<>());
-        for (int[] edge : edges) {
-            g.get(edge[0]).add(edge[1]);
-            g.get(edge[1]).add(edge[0]);
+        List<Integer>[] graph = new ArrayList[n];
+        for (int i = 0; i < n; i++) graph[i] = new ArrayList<>();
+        for (int[] e : edges) {
+            graph[e[0]].add(e[1]);
+            graph[e[1]].add(e[0]);
         }
-        int[] parent = new int[n], depth = new int[n], order = new int[n];
-        Arrays.fill(parent, -1);
-        parent[0] = 0;
-        order[0] = 0;
-        int orderSize = 1;
-        for (int i = 0; i < orderSize; i++) {
-            int u = order[i];
-            for (int v : g.get(u)) {
-                if (v != parent[u]) {
-                    parent[v] = u;
-                    depth[v] = depth[u] + 1;
-                    order[orderSize++] = v;
-                }
+        int[][] parent = new int[LOG][n];
+        for (int[] row : parent) Arrays.fill(row, -1);
+        int[] depth = new int[n];
+        int[] tin = new int[n];
+        int[] tout = new int[n];
+        int[] timer = {0};
+        dfs(0, -1, graph, parent, depth, tin, tout, timer);
+        for (int k = 1; k < LOG; k++) {
+            for (int i = 0; i < n; i++) {
+                int p = parent[k - 1][i];
+                if (p != -1) parent[k][i] = parent[k - 1][p];
             }
         }
-
-        int[] size = new int[n], heavy = new int[n];
-        Arrays.fill(size, 1);
-        Arrays.fill(heavy, -1);
-        for (int i = n - 1; i > 0; i--) {
-            int u = order[i], p = parent[u];
-            size[p] += size[u];
-            if (heavy[p] == -1 || size[u] > size[heavy[p]]) heavy[p] = u;
+        Fenwick fenwick = new Fenwick(n);
+        char[] labels = s.toCharArray();
+        for (int i = 0; i < n; i++) {
+            int m = mask(labels[i]);
+            fenwick.add(tin[i], m);
+            fenwick.add(tout[i] + 1, m);
         }
-
-        int[] head = new int[n], pos = new int[n], stack = new int[n];
-        int top = 0, cur = 0;
-        stack[top++] = 0;
-        while (top > 0) {
-            int u = stack[--top];
-            int h = u;
-            while (u != -1) {
-                head[u] = h;
-                pos[u] = cur++;
-                for (int v : g.get(u)) {
-                    if (v != parent[u] && v != heavy[u]) stack[top++] = v;
-                }
-                u = heavy[u];
-            }
-        }
-        int size2 = 1;
-        while (size2 < n) size2 <<= 1;
-        int[] seg = new int[2 * size2];
-        for (int u = 0; u < n; u++) seg[size2 + pos[u]] = 1 << (s.charAt(u) - 'a');
-        for (int i = size2 - 1; i > 0; i--) seg[i] = seg[i * 2] ^ seg[i * 2 + 1];
         List<Boolean> ans = new ArrayList<>();
         for (String q : queries) {
-            String[] parts = q.trim().split("\\s+");
-            int u = Integer.parseInt(parts[1]);
-            if (parts[0].equals("update")) {
-                char c = parts[2].charAt(0);
-                update(seg, size2, pos[u], 1 << (c - 'a'));
+            String[] p = q.split(" ");
+            if (p[0].equals("update")) {
+                int u = Integer.parseInt(p[1]);
+                char c = p[2].charAt(0);
+                int delta = mask(labels[u]) ^ mask(c);
+                labels[u] = c;
+                fenwick.add(tin[u], delta);
+                fenwick.add(tout[u] + 1, delta);
             } else {
-                int v = Integer.parseInt(parts[2]);
-                int mask = pathQuery(seg, size2, parent, depth, head, pos, u, v);
-                ans.add((mask & (mask - 1)) == 0);
+                int u = Integer.parseInt(p[1]), v = Integer.parseInt(p[2]), w = lca(u, v, parent, depth);
+                int m = fenwick.sum(tin[u]) ^ fenwick.sum(tin[v]) ^ mask(labels[w]);
+                ans.add(m == 0 || (m & (m - 1)) == 0);
             }
         }
         return ans;
     }
-    private void update(int[] seg, int size2, int p, int value) {
-        p += size2;
-        seg[p] = value;
-        for (p >>= 1; p > 0; p >>= 1) seg[p] = seg[p * 2] ^ seg[p * 2 + 1];
-    }
+    private void dfs(int u, int p, List<Integer>[] g, int[][] parent, int[] depth, int[] tin, int[] tout, int[] timer) {
 
-    private int rangeQuery(int[] seg, int size2, int l, int r) {
-        l += size2;
-        r += size2;
-        int res = 0;
-        while (l <= r) {
-            if ((l & 1) != 0) res ^= seg[l++];
-            if ((r & 1) == 0) res ^= seg[r--];
-            l >>= 1;
-            r >>= 1;
+        tin[u] = timer[0]++;
+        parent[0][u] = p;
+        for (int v : g[u]) {
+            if (v == p) continue;
+            depth[v] = depth[u] + 1;
+            dfs(v, u, g, parent, depth, tin, tout, timer);
         }
-        return res;
+        tout[u] = timer[0] - 1;
     }
-    private int pathQuery(int[] seg, int size2, int[] parent, int[] depth, int[] head, int[] pos, int u, int v) {
-        int res = 0;
-        while (head[u] != head[v]) {
-            if (depth[head[u]] < depth[head[v]]) {
-                int temp = u;
-                u = v;
-                v = temp;
+    private int lca(int u, int v, int[][] parent, int[] depth) {
+        if (depth[u] < depth[v]) {
+            int t = u; u = v; v = t;
+        }
+        int d = depth[u] - depth[v];
+        for (int k = 0; k < LOG; k++)
+            if ((d & (1 << k)) != 0) u = parent[k][u];
+        if (u == v) return u;
+        for (int k = LOG - 1; k >= 0; k--) {
+            if (parent[k][u] != parent[k][v]) {
+                u = parent[k][u];
+                v = parent[k][v];
             }
-            res ^= rangeQuery(seg, size2, pos[head[u]], pos[u]);
-            u = parent[head[u]];
         }
-        if (depth[u] > depth[v]) {
-            int temp = u;
-            u = v;
-            v = temp;
+        return parent[0][u];
+    }
+    private int mask(char c) { 
+        return 1 << (c - 'a');
+    }
+    static class Fenwick {
+        int n;
+        int[] bit;
+        Fenwick(int n) {
+            this.n = n;
+            bit = new int[n + 1];
         }
-        return res ^ rangeQuery(seg, size2, pos[u], pos[v]);
+        void add(int i, int val) {
+            for (i++; i <= n; i += i & -i) bit[i] ^= val;
+        }
+        int sum(int i) {
+            int r = 0;
+            for (i++; i > 0; i -= i & -i)
+                r ^= bit[i];
+            return r;
+        }
     }
 }
