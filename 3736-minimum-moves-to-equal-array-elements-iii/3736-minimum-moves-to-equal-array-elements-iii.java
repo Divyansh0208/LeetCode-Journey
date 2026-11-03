@@ -1,10 +1,10 @@
 class Solution {
     public int minMoves(int[] nums) {
-        int a=0,b=0;
+        int a=Integer.MIN_VALUE, b=0;
         for(int i:nums){
-            if(i>a) a=i;
+            a=Math.max(a, i);
+            b+=i;
         }
-        for(int i:nums) b+=a-i;
-        return b;
+        return nums.length*a-b;
     }
 }
