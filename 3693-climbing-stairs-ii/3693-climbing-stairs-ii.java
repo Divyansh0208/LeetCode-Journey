@@ -1,15 +1,12 @@
 class Solution {
     public int climbStairs(int n, int[] costs) {
-        int[] a=new int[n+1];
-        Arrays.fill(a,Integer.MAX_VALUE);
-        a[0]=0;
-        for(int i=1;i<=n;i++){
-            for(int j=Math.max(0,i-3);j<i;j++){
-                int b=i-j;
-                int c=costs[i-1]+b*b;
-                a[i]=Math.min(a[i],a[j]+c);
-            }
+        int a = 0, b = 0, c = 0;
+        for (int i : costs) {
+            int z = Math.min(Math.min(a + 9, b + 4), c + 1) + i;
+            a = b;
+            b = c;
+            c = z;
         }
-        return a[n];
+        return c;
     }
 }
