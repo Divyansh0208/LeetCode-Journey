@@ -1,27 +1,22 @@
 class Solution {
     public long countNonDecreasingSubarrays(int[] nums, int k) {
         int n = nums.length;
-        int r = n-1;
-        long ans = 0;
-        long change = 0;
-        Deque<int[]> deque = new ArrayDeque<>();
-        for (int l = n-1; l >= 0; l--){
-            int curMin = nums[l];
-            int curMinCount = 1;
-            while (!deque.isEmpty() && deque.peekFirst()[0] <= curMin){
-                int[] pair = deque.pollFirst();
-                curMinCount += pair[1];
-                change += (long)(curMin-pair[0]) * pair[1];
+        long ans = 0, cost = 0;
+        int[] stack = new int[n];
+        int head = 0, top = 0, j = n - 1;
+        for (int i = n - 1; i >= 0; i--) {
+            while (head < top && nums[stack[top - 1]] < nums[i]) {
+                int x = stack[--top];
+                int r = (head < top) ? stack[top - 1] : j + 1;
+                cost += (long) (r - x) * (nums[i] - nums[x]);
             }
-            deque.offerFirst(new int[]{curMin, curMinCount});
-            while (change > k){
-                int[] last = deque.peekLast();
-                last[1]--;
-                change -= last[0] - nums[r];
-                r--;
-                if (last[1] == 0) deque.pollLast();
+            stack[top++] = i;
+            while (cost > k) {
+                cost -= (long) nums[stack[head]] - nums[j];
+                if (stack[head] == j) head++;
+                j--;
             }
-            ans += r-l+1;
+            ans += j - i + 1;
         }
         return ans;
     }
