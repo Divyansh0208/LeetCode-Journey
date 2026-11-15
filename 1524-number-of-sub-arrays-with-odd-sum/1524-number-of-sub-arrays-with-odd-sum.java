@@ -1,17 +1,12 @@
 class Solution {
     public int numOfSubarrays(int[] arr) {
-        final int MOD=1000000007;
-        int a=0,b=1,c=0,d=0;
-        for(int i:arr){
-            c+=i;
-            if(c%2==0){
-                d=(d+a)%MOD;
-                b++;
-            }else{
-                d=(d+b)%MOD;
-                a++;
-            }
+        int a=0;
+        long b=0;
+        for(int i=0;i<arr.length;i++){
+            a+=arr[i];
+            b+=a%2;
         }
-        return d;
+        b+=(arr.length-b)*b;
+        return (int) (b%1000000007);
     }
 }
