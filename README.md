@@ -262,6 +262,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0032-longest-valid-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0032-longest-valid-parentheses) |
 | [0115-distinct-subsequences](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0115-distinct-subsequences) |
 | [0125-valid-palindrome](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0125-valid-palindrome) |
+| [0241-different-ways-to-add-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0241-different-ways-to-add-parentheses) |
 | [0301-remove-invalid-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0301-remove-invalid-parentheses) |
 | [0345-reverse-vowels-of-a-string](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0345-reverse-vowels-of-a-string) |
 | [0500-keyboard-row](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0500-keyboard-row) |
@@ -421,6 +422,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0053-maximum-subarray](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0053-maximum-subarray) |
 | [0115-distinct-subsequences](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0115-distinct-subsequences) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0121-best-time-to-buy-and-sell-stock) |
+| [0241-different-ways-to-add-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0241-different-ways-to-add-parentheses) |
 | [0486-predict-the-winner](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0486-predict-the-winner) |
 | [0509-fibonacci-number](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0509-fibonacci-number) |
 | [0678-valid-parenthesis-string](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0678-valid-parenthesis-string) |
@@ -471,6 +473,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0007-reverse-integer](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0007-reverse-integer) |
 | [0029-divide-two-integers](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0029-divide-two-integers) |
 | [0189-rotate-array](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0189-rotate-array) |
+| [0241-different-ways-to-add-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0241-different-ways-to-add-parentheses) |
 | [0453-minimum-moves-to-equal-array-elements](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0453-minimum-moves-to-equal-array-elements) |
 | [0462-minimum-moves-to-equal-array-elements-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0462-minimum-moves-to-equal-array-elements-ii) |
 | [0486-predict-the-winner](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0486-predict-the-winner) |
@@ -620,11 +623,13 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Recursion
 |  |
 | ------- |
+| [0241-different-ways-to-add-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0241-different-ways-to-add-parentheses) |
 | [0486-predict-the-winner](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0486-predict-the-winner) |
 | [0509-fibonacci-number](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0509-fibonacci-number) |
 ## Memoization
 |  |
 | ------- |
+| [0241-different-ways-to-add-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0241-different-ways-to-add-parentheses) |
 | [0509-fibonacci-number](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0509-fibonacci-number) |
 | [1569-number-of-ways-to-reorder-array-to-get-same-bst](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1569-number-of-ways-to-reorder-array-to-get-same-bst) |
 ## Game Theory
@@ -703,6 +708,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0020-valid-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0020-valid-parentheses) |
 | [0022-generate-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0022-generate-parentheses) |
 | [0032-longest-valid-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0032-longest-valid-parentheses) |
+| [0241-different-ways-to-add-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0241-different-ways-to-add-parentheses) |
 | [0678-valid-parenthesis-string](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0678-valid-parenthesis-string) |
 | [0856-score-of-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0856-score-of-parentheses) |
 | [0921-minimum-add-to-make-parentheses-valid](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0921-minimum-add-to-make-parentheses-valid) |
