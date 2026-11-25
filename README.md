@@ -345,6 +345,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Breadth-First Search
 |  |
 | ------- |
+| [0112-path-sum](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0112-path-sum) |
 | [0301-remove-invalid-parentheses](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0301-remove-invalid-parentheses) |
 | [1096-brace-expansion-ii](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1096-brace-expansion-ii) |
 | [1254-number-of-closed-islands](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1254-number-of-closed-islands) |
@@ -455,6 +456,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Depth-First Search
 |  |
 | ------- |
+| [0112-path-sum](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0112-path-sum) |
 | [1254-number-of-closed-islands](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1254-number-of-closed-islands) |
 | [1267-count-servers-that-communicate](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1267-count-servers-that-communicate) |
 | [2265-count-nodes-equal-to-average-of-subtree](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/2265-count-nodes-equal-to-average-of-subtree) |
@@ -680,12 +682,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Tree
 |  |
 | ------- |
+| [0112-path-sum](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0112-path-sum) |
 | [1569-number-of-ways-to-reorder-array-to-get-same-bst](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1569-number-of-ways-to-reorder-array-to-get-same-bst) |
 | [2265-count-nodes-equal-to-average-of-subtree](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/2265-count-nodes-equal-to-average-of-subtree) |
 | [3841-palindromic-path-queries-in-a-tree](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/3841-palindromic-path-queries-in-a-tree) |
 ## Binary Tree
 |  |
 | ------- |
+| [0112-path-sum](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/0112-path-sum) |
 | [1569-number-of-ways-to-reorder-array-to-get-same-bst](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/1569-number-of-ways-to-reorder-array-to-get-same-bst) |
 | [2265-count-nodes-equal-to-average-of-subtree](https://github.com/Divyansh0208/LeetCode-Journey/tree/master/2265-count-nodes-equal-to-average-of-subtree) |
 ## Geometry
